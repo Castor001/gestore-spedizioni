@@ -148,6 +148,9 @@ public class GraficaSpedizioneAdmin {
 		logout.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		panelSud.add(logout);
 		
+		/*
+		 * Creo le classi per il table model e imposto la tabella a contenere il table model non runnable
+		 */
 		AdminTableModel tm = new AdminTableModel(a);
 		AdminTableModeRunnable tmr = new AdminTableModeRunnable(a);
 		table = new JTable(tm);
@@ -159,6 +162,9 @@ public class GraficaSpedizioneAdmin {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				/*
+				 * Creo un pulsante astratto e controllo se è selezionato oppure no.
+				*/
 				AbstractButton b = (AbstractButton) e.getSource();
 				selected = b.getModel().isSelected();
 				
@@ -273,6 +279,9 @@ public class GraficaSpedizioneAdmin {
 	 * @param deleteRow the row to delete
 	 */
 	static void removeSelectedRows(JTable table, int deleteRow) {
+		/*
+		 * Recupero il modello della tabella e elimino la riga passata alla funzione
+		 */
 		AdminTableModel model = (AdminTableModel) table.getModel();
 		model.removeRow(deleteRow);
 	}

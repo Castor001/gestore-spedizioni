@@ -184,6 +184,11 @@ public class GraficaSpedizioneUnormale implements ActionListener{
 		
 		destinazione = new JTextField();
 		destinazione.setColumns(10);
+		/*
+		 * Recupero il modello del documento con getDocument() e aggiungo un 
+		 * ascoltatore di eventi che permette di abilitare il pulsante di 
+		 * registrazione
+		 */
 		destinazione.getDocument().addDocumentListener(new DocumentListener() {
 
 			@Override
@@ -295,6 +300,7 @@ public class GraficaSpedizioneUnormale implements ActionListener{
 						
 				}catch(NumberFormatException e1) {
 					JOptionPane.showMessageDialog(null, "Peso inserito non valido", "Errore", JOptionPane.ERROR_MESSAGE);
+					return;
 				}
 				
 				if (checkBoxAssicurato.isSelected()) {
@@ -306,6 +312,7 @@ public class GraficaSpedizioneUnormale implements ActionListener{
 						}
 					}catch(NumberFormatException e2) {
 						JOptionPane.showMessageDialog(null, "Valore inserito non valido", "Errore", JOptionPane.ERROR_MESSAGE);
+						return;
 					}
 				}
 				
@@ -332,7 +339,7 @@ public class GraficaSpedizioneUnormale implements ActionListener{
 					 a.add(sa);
 					 a2.add(sa);
 					 tm.fireTableDataChanged();
-					 totRighe.setText("Righe: " + a.size());
+					 totRighe.setText("Righe: " + a2.size());
 				}
 				else {
 					s = new Spedizione(username, destinazione.getText(), peso.getText());
@@ -340,7 +347,7 @@ public class GraficaSpedizioneUnormale implements ActionListener{
 					a.add(s);
 					a2.add(s);
 					tm.fireTableDataChanged();
-					totRighe.setText("Righe: " + a.size());
+					totRighe.setText("Righe: " + a2.size());
 				}
 				/*
 				 * Cancella i dati inseriti nelle JTextField impostandole a stringa vuota
@@ -430,7 +437,7 @@ public class GraficaSpedizioneUnormale implements ActionListener{
 		/*
 		 * Scrive il numero di righe presenti nella tabella 
 		 */
-		totRighe = new JLabel("Totale righe: " + a.size());
+		totRighe = new JLabel("Totale righe: " + a2.size());
 		panel_1.add(totRighe, BorderLayout.SOUTH);
 		
 		JPanel panel = new JPanel();

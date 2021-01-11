@@ -23,7 +23,8 @@ public class Archivio<E> implements Collection<E>, Serializable {
 	/**
 	 * AGGIUNGERE !!!
 	 */
-	private List<E> spedizione; //utilizzo la regola di conformit� 
+	private List<E> spedizione; //utilizzo la regola di conformita' che permette di assegnare a una variabile di 
+	//tipo classe un'istanza di una qualsiasi classe discendente. Lo posso fare perchè Vector discende da List
 	
 	/**
 	 *

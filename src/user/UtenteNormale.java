@@ -47,7 +47,7 @@ public class UtenteNormale extends AbstractUser {
 			while (x.hasNext() && !found) {
 				tempUsername = x.next();
 				tempPassword = x.next();
-				tempEmail = x.next(); //leggo anche la mail altrimenti mi sballa la lettura
+				tempEmail = x.next(); //leggo anche l'indirizzo altrimento sballa la lettura
 				//System.out.println("HO LETTO: " + tempUsername + " " + tempPassword);
 				
 				if (tempUsername.trim().equals(username.trim()) && tempPassword.trim().equals(password.trim())) {
@@ -72,8 +72,8 @@ public class UtenteNormale extends AbstractUser {
 	/**
 	 * Search username in the users file.
 	 * 
-	 * @param username lo username dell'utente.
-	 * @return true se esiste un utente con quell'username, falso altrimenti.
+	 * @param username User's username
+	 * @return true if there is a user with that username, false otherwise
 	 */
 	private boolean existUser(String username) {
 		File file = new File("");
@@ -107,10 +107,10 @@ public class UtenteNormale extends AbstractUser {
 	/**
 	 * Save a user in the file.
 	 * 
-	 * @param username User's username.
-	 * @param password User's password.
-	 * @param email User's email.
-	 * @return true if user saved, false if the user already exists.
+	 * @param username User's username
+	 * @param password User's password
+	 * @param email User's address
+	 * @return true if user saved, false if the user already exists
 	 */
 	public boolean salvaUtente(String username, String password, String email) {
 		

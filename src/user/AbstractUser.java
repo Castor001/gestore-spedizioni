@@ -7,10 +7,10 @@ package user;
 public abstract class AbstractUser {
 	
 	/**
-	 * Method for implementing a user's login
+	 * Method for implementing a user's login.
 	 * @param username of user
 	 * @param password of user
-	 * @return true if login is successful, false otherwhise.
+	 * @return true if login is successful, false otherwhise
 	 */
 	protected abstract boolean login(String username, String password);
 }
